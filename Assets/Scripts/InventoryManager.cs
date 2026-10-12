@@ -36,10 +36,12 @@ public class InventoryManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.I))
             {
                 Additemtoinventory(Test_item);
+                Debug.Log("Added item to inventory: " + Test_item.itemname);
             }
             if (Input.GetKeyDown(KeyCode.O))
             {
                 Removeitemfrominventory(Test_item);
+                Debug.Log("Removed item from inventory: " + Test_item.itemname);
             }
         }
 
