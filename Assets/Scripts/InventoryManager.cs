@@ -7,20 +7,7 @@ public class InventoryManager : MonoBehaviour
     public GameManger gameManager;
     [SerializeField]private int maxinventorysize = 10;
 
-    private InventoryItem Test_item = new InventoryItem("test item", 1, 0);
-
-    public class InventoryItem
-    {
-        public string itemname;
-        public int itemquantity;
-        public int ownitemtag;
-        public InventoryItem(string name, int quantity, int itemtag)
-        {
-            itemname = name;
-            itemquantity = quantity;
-            ownitemtag = itemtag;
-        }
-    }
+    //private InventoryItem Test_item = new InventoryItem("test item", 1, 0);
     
 
     void Start()
@@ -30,7 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { /*
         if(gameManager.stateid==0)
         {
             if (Input.GetKeyDown(KeyCode.I))
@@ -44,7 +31,7 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("Removed item from inventory: " + Test_item.itemname);
             }
         }
-
+        */
     }
        
 
@@ -56,5 +43,25 @@ public class InventoryManager : MonoBehaviour
     public void Removeitemfrominventory(InventoryItem item)
     {
         inventory.Remove(item);
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        InventoryItem item = hit.gameObject.GetComponent<InventoryItem>();
+        if(item!=null)
+        {
+            if(item.itemquantity>0)
+            {
+                while (item.itemquantity > 0)
+                {
+                    Additemtoinventory(item);
+                    item.itemquantity--;
+                }
+                   
+            }
+            
+            Debug.Log("Added item to inventory: " + item.itemname);
+            item.OnCollect();
+        }
     }
 }
