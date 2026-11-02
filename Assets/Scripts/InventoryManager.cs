@@ -6,6 +6,7 @@ public class InventoryManager : MonoBehaviour
     public List<InventoryItem> inventory = new List<InventoryItem>();
     public GameManger gameManager;
     [SerializeField]private int maxinventorysize = 10;
+    public Transform Items;
 
     //private InventoryItem Test_item = new InventoryItem("test item", 1, 0);
     
@@ -40,11 +41,12 @@ public class InventoryManager : MonoBehaviour
         inventory.Add(item);
     }
 
+    /*
     public void Removeitemfrominventory(InventoryItem item)
     {
         inventory.Remove(item);
     }
-
+    */
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         InventoryItem item = hit.gameObject.GetComponent<InventoryItem>();
@@ -62,6 +64,15 @@ public class InventoryManager : MonoBehaviour
             
             Debug.Log("Added item to inventory: " + item.itemname);
             item.OnCollect();
+        }
+    }
+     public void Removeitemfrominventory()
+    {
+        if(inventory.Count>0)
+        {
+            InventoryItem item = inventory[0];
+            GameObject itemObject=item.gameObject;
+            inventory.Remove(item);
         }
     }
 }
