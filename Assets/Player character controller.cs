@@ -14,4 +14,13 @@ public class Playercharactercontroller : StarterAssets.ThirdPersonController
             FindObjectOfType<GameManger>().OnPause();
         }
     }
+
+    void OnRemoveItem(InputValue value)
+    { 
+        if(value.isPressed)
+        {
+            Debug.Log("Remove item button pressed");
+
+        }
+    }
 }
