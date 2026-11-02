@@ -15,7 +15,60 @@ public class GameManger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    public void OnPause()
+    {
+        switch (stateid)
+        {
+            case 0:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    stateid = 1;
+                    statechange = true;
+                    Debug.Log("Pause");
+                }
+
+                break;
+            case 1:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    stateid = 0;
+                    statechange = true;
+                    Debug.Log("Gameplay");
+                }
+
+                break;
+            }
+        if (statechange)
+        {
+            /*
+            if (state == GameState.Pause)
+            {
+                Time.timeScale = 0f;
+
+            }
+            else if (state == GameState.Gameplay)
+            {
+                Time.timeScale = 1f;
+
+            }
+            statechange = false;
+            */
+
+            switch (stateid)
+            {
+                case 0:
+                    Time.timeScale = 1f;
+                    break;
+                case 1:
+                    Time.timeScale = 0f;
+                    break;
+            }
+            statechange = false;
+        }
+
+    }
+    /*void Update()
     {
         /*
         if (state == GameState.Gameplay)
@@ -36,7 +89,7 @@ public class GameManger : MonoBehaviour
                 statechange = true;
             }
         }
-        */
+        
         //Debug.Log(state);
         
         switch(stateid)
@@ -67,7 +120,7 @@ public class GameManger : MonoBehaviour
     {
         if(statechange)
         {
-            /*
+            
             if (state == GameState.Pause)
             {
                 Time.timeScale = 0f;
@@ -79,7 +132,7 @@ public class GameManger : MonoBehaviour
 
             }
             statechange = false;
-            */
+            
 
             switch(stateid)
             {
@@ -94,6 +147,6 @@ public class GameManger : MonoBehaviour
         }
 
 
-    }
+    }*/
 }
 
