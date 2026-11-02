@@ -20,7 +20,7 @@ public class Playercharactercontroller : StarterAssets.ThirdPersonController
         if(value.isPressed)
         {
             Debug.Log("Remove item button pressed");
-
+            FindAnyObjectByType<InventoryManager>().Removeitemfrominventory();
         }
     }
 }
