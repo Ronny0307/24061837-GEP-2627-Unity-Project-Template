@@ -83,6 +83,23 @@ public class InventoryManager : MonoBehaviour
             //updateitems();
         }
     }
+
+    public void Removeitemfrominventory(int i)
+    {
+        if(inventory.Count>i)
+        {
+            InventoryItem item = inventory[i];
+            GameObject itemObject = item.gameObject;
+            inventory.Remove(item);
+
+            Vector3 position =
+                GetComponent<Transform>().position + GetComponent<Transform>().forward + Vector3.up;
+            Quaternion rotation = Quaternion.Euler(0, 180, 0) * GetComponent<Transform>().rotation;
+            GameObject newItem = Instantiate(itemObject, position, rotation, Items);
+            newItem.SetActive(true);
+            Destroy(itemObject);
+        }
+    }
     /*
     public void updateitems()
     {
