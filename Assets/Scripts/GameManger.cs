@@ -7,6 +7,8 @@ public class GameManger : MonoBehaviour
     public bool statechange= false;
     public int stateid = 0; // 0 = gameplay, 1 = pause
 
+    public GameObject Inventory;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +28,8 @@ public class GameManger : MonoBehaviour
                     stateid = 1;
                     statechange = true;
                     Debug.Log("Pause");
+                    Cursor.lockState = CursorLockMode.None;
+                    Inventory.SetActive(true);
                 }
 
                 break;
@@ -35,6 +39,8 @@ public class GameManger : MonoBehaviour
                     stateid = 0;
                     statechange = true;
                     Debug.Log("Gameplay");
+                    Inventory.SetActive(false);
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
 
                 break;
