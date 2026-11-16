@@ -52,7 +52,12 @@ public class InventoryManager : MonoBehaviour
         InventoryItem item = hit.gameObject.GetComponent<InventoryItem>();
         if(item!=null)
         {
-            if(item.itemquantity>0)
+            if (item.itemquantity == 0)
+            {
+                Additemtoinventory(item);
+
+            }
+            if (item.itemquantity>0)
             {
                 while (item.itemquantity > 0)
                 {
@@ -62,6 +67,7 @@ public class InventoryManager : MonoBehaviour
                    
             }
             
+
             Debug.Log("Added item to inventory: " + item.itemname);
             item.OnCollect();
         }
@@ -96,7 +102,10 @@ public class InventoryManager : MonoBehaviour
                 GetComponent<Transform>().position + GetComponent<Transform>().forward + Vector3.up;
             Quaternion rotation = Quaternion.Euler(0, 180, 0) * GetComponent<Transform>().rotation;
             GameObject newItem = Instantiate(itemObject, position, rotation, Items);
+            newItem.GetComponent<InventoryItem>().itemquantity = 1;
             newItem.SetActive(true);
+           
+
             Destroy(itemObject);
         }
     }
