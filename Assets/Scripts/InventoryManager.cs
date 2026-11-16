@@ -80,6 +80,23 @@ public class InventoryManager : MonoBehaviour
             GameObject newItem = Instantiate(itemObject, position, rotation, Items);
             newItem.SetActive(true);
             Destroy(itemObject);
+            //updateitems();
         }
     }
+    /*
+    public void updateitems()
+    {
+        int i=0;
+        foreach (InventoryItem item in inventory)
+        {
+
+            if (inventory[i+1]!=null)
+            {
+                inventory[i].itemname = inventory[i + 1].itemname;
+                inventory[i].itemquantity = inventory[i + 1].itemquantity;
+                inventory[i].description = inventory[i + 1].description;
+                inventory[i].flags = inventory[i + 1].flags;
+            }
+        }
+    }*/
 }

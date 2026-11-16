@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 24979529}
   - component: {fileID: 24979528}
   - component: {fileID: 24979527}
+  - component: {fileID: 24979530}
   m_Layer: 5
   m_Name: Inventory (3)
   m_TagString: Untagged
@@ -240,6 +241,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24979525}
   m_CullTransparentMesh: 1
+--- !u!114 &24979530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24979525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc80058595db19e4a8c4ebf5fe17601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  buttonText: {fileID: 2088526268}
 --- !u!1 &28080266
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +266,7 @@ GameObject:
   - component: {fileID: 28080270}
   - component: {fileID: 28080269}
   - component: {fileID: 28080268}
+  - component: {fileID: 28080271}
   m_Layer: 5
   m_Name: Inventory (1)
   m_TagString: Untagged
@@ -361,6 +376,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28080266}
   m_CullTransparentMesh: 1
+--- !u!114 &28080271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28080266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc80058595db19e4a8c4ebf5fe17601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  buttonText: {fileID: 1769687778}
 --- !u!4 &38846974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000881696397037157, guid: 5ed4b7469649fb24b909c0a39bc77ad6, type: 3}
@@ -561,6 +589,7 @@ GameObject:
   - component: {fileID: 249079910}
   - component: {fileID: 249079909}
   - component: {fileID: 249079908}
+  - component: {fileID: 249079911}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -670,6 +699,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249079906}
   m_CullTransparentMesh: 1
+--- !u!114 &249079911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249079906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc80058595db19e4a8c4ebf5fe17601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  buttonText: {fileID: 1412844035}
 --- !u!1001 &328963719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1134,6 +1176,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 969783204}
+    - targetCorrespondingSourceObject: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1239857036}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0271df749728104eac22c3d897fd8ce, type: 3}
 --- !u!4 &746329222 stripped
@@ -1497,7 +1542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &969783204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1599,7 +1644,7 @@ MonoBehaviour:
   - {fileID: 1981121577}
   - {fileID: 24979525}
   - {fileID: 1625353569}
-  InvUI: {fileID: 0}
+  InvUI: {fileID: 1239857029}
 --- !u!1001 &997291305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2723,7 +2768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1607309338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2825,6 +2870,7 @@ GameObject:
   - component: {fileID: 1625353572}
   - component: {fileID: 1625353571}
   - component: {fileID: 1625353570}
+  - component: {fileID: 1625353574}
   m_Layer: 5
   m_Name: Inventory (4)
   m_TagString: Untagged
@@ -2934,6 +2980,19 @@ RectTransform:
   m_AnchoredPosition: {x: 770.19916, y: -952.78625}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1625353574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625353569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc80058595db19e4a8c4ebf5fe17601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  buttonText: {fileID: 1580613105}
 --- !u!1001 &1640930908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3111,7 +3170,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 746329222}
     m_Modifications:
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
@@ -3586,6 +3645,7 @@ GameObject:
   - component: {fileID: 1981121581}
   - component: {fileID: 1981121580}
   - component: {fileID: 1981121579}
+  - component: {fileID: 1981121582}
   m_Layer: 5
   m_Name: Inventory (2)
   m_TagString: Untagged
@@ -3695,6 +3755,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981121577}
   m_CullTransparentMesh: 1
+--- !u!114 &1981121582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981121577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc80058595db19e4a8c4ebf5fe17601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
+  buttonText: {fileID: 2120578389}
 --- !u!4 &2026930260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000881696397037157, guid: 93ca25b47e8867e4f8199f9d44e23da6, type: 3}
@@ -4640,7 +4713,6 @@ SceneRoots:
   - {fileID: 8345070700268369567}
   - {fileID: 1221041499}
   - {fileID: 1402827283}
-  - {fileID: 1762682258}
   - {fileID: 746329221}
   - {fileID: 1740067096}
   - {fileID: 723570058}
